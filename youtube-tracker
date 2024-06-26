@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Tracker</title>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <h1>Watch the Video and Earn Shiba</h1>
+    <div id="links"></div>
+
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        var db = firebase.firestore();
+
+        // Retrieve links from Firestore and display them
+        db.collection("links").get().then((querySnapshot) => {
+            var linksDiv = document.getElementById('links');
+            querySnapshot.forEach((doc) => {
+                var link = doc.data().url;
+                var linkElement = document.createElement('div');
+                linkElement.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+                linksDiv.appendChild(linkElement);
+            });
+        });
+    </script>
+</body>
+</html>
