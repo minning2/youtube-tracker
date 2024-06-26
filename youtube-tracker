@@ -12,12 +12,12 @@
     <script>
         // Firebase configuration
         var firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyCAMjHaxu6pqVUucrW27JmwBBTTb39B8pA",
+            authDomain: "tel-bot-749fe.firebaseapp.com",
+            projectId: "tel-bot-749fe",
+            storageBucket: "tel-bot-749fe.appspot.com",
+            messagingSenderId: "Y693082613866",
+            appId: "1:693082613866:web:bab75fc3953cc4ccce8213"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
